@@ -1,0 +1,14 @@
+[alias]
+    ck = checkout
+    st = status
+    last = log -1 HEAD --stat
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    f = fetch
+    ac = commit -am
+    amend = commit -a --amend
+    noedit = commit -a --amend --no-edit
+    clear = checkout -- .
+    p = push
+    lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+    skipci = push -o ci.skip
